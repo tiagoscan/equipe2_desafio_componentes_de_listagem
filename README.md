@@ -9,7 +9,7 @@
 :small_blue_diamond: `Tiago Candido` \
 :small_blue_diamond: `Reginaldo de Lima` \
 :small_blue_diamond: `Daniel Duarte` \
-:small_blue_diamond: `Patrick Silvestre` \
+:small_blue_diamond: `Patrick Silvestre`
 
 ------------
 
