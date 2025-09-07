@@ -19,7 +19,7 @@
         app:srcCompat="@drawable/imagem_outback" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageVoltar"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="24dp"
@@ -32,10 +32,10 @@
         android:id="@+id/imageView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/imageVoltar"
+        app:layout_constraintEnd_toEndOf="@+id/imageVoltar"
+        app:layout_constraintStart_toStartOf="@+id/imageVoltar"
+        app:layout_constraintTop_toTopOf="@+id/imageVoltar"
         app:srcCompat="@drawable/ic_voltar_24" />
 
     <TextView

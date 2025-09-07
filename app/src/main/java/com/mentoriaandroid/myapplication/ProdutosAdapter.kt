@@ -1,9 +1,11 @@
 package com.mentoriaandroid.myapplication
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 
@@ -30,6 +32,23 @@ class ProdutosAdapter(private val lista: List<Produtos>) : RecyclerView.Adapter<
         holder.textoDescricaoProduto.text = item.descricao
         holder.textoPrecoProduto.text = item.preco
         holder.imagem.setImageResource(item.imagem)
+
+        // Clique no item
+        holder.itemView.setOnClickListener {
+            // Exibe o Toast
+            Toast.makeText(holder.itemView.context, "Você clicou em ${item.nome}", Toast.LENGTH_SHORT).show()
+
+            // Abre a nova tela
+            val context = holder.itemView.context
+            //val intent = Intent(context, DetalhesProdutosActivity::class.java)
+            val intent = Intent(context, MainActivity::class.java).apply {
+                putExtra("nome", item.nome)
+                putExtra("descricao", item.descricao)
+                putExtra("preco", item.preco)
+                putExtra("imagem", item.imagem)
+            }
+            context.startActivity(intent)
+        }
     }
 
     // Quantos itens a lista tem

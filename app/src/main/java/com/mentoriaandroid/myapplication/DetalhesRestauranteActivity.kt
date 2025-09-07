@@ -1,6 +1,8 @@
 package com.mentoriaandroid.myapplication
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class DetalhesRestauranteActivity : AppCompatActivity() {
+
+    lateinit var imagemVoltar: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -19,7 +24,14 @@ class DetalhesRestauranteActivity : AppCompatActivity() {
             insets
         }
 
+        imagemVoltar = findViewById(R.id.imageVoltar)
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewProdutos)
+
+        imagemVoltar.setOnClickListener {
+            //val intent = Intent(this, InicialRestaurantesActivity::class.java)
+            val intent = Intent (this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         val produtos = listOf(
             Produtos("Big Five", "Os cinco aperitivos mais pedidos da casa em um único prato.", "R$89,90", R.drawable.big_five),
