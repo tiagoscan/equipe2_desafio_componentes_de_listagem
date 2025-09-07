@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
@@ -24,20 +24,20 @@
                 android:id="@+id/textNomeProduto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Big Five"
+                android:text="Nome do Produto"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/textDescricaoProduto"
                 android:layout_width="275dp"
                 android:layout_height="wrap_content"
-                android:text="Os cinco aperitivos mais pedidos da casa em um único prato." />
+                android:text="Texto do Produto" />
 
             <TextView
-                android:id="@+id/textValorProduto"
+                android:id="@+id/textPrecoProduto"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="R$89,90"
+                android:text="Valor do Produto"
                 android:textStyle="bold" />
         </LinearLayout>
 
@@ -48,7 +48,7 @@
             android:layout_margin="8dp"
             android:scaleType="centerCrop"
             app:shapeAppearanceOverlay="@style/RoundedImage"
-            app:srcCompat="@drawable/big_five" />
+            app:srcCompat="@drawable/ic_launcher_background" />
 
     </LinearLayout>
 

@@ -5,6 +5,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class DetalhesRestauranteActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,5 +18,16 @@ class DetalhesRestauranteActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewProdutos)
+
+        val produtos = listOf(
+            Produtos("Big Five", "Os cinco aperitivos mais pedidos da casa em um único prato.", "R$89,90", R.drawable.big_five),
+            Produtos("Kookaburra Wings", "Este prato é composto por sobreasas de frango empanadas e temperadas com um blend de sabores exclusivos, e é servido com molho Blue Cheese e aipo crocante.", "R$69,90", R.drawable.wings),
+            Produtos("Aussie Cheese Fries", "Batatas fritas cobertas com um mix de queijos e bacon, servidas com molho Ranch.", "R$49,90", R.drawable.fries)
+        )
+
+        recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        recyclerView.adapter = ProdutosAdapter(produtos)
     }
 }
