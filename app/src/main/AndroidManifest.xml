@@ -13,10 +13,13 @@
         android:theme="@style/Theme.DesafioComponentesDeListagem"
         tools:targetApi="31">
         <activity
+            android:name=".PerfilUsuarioActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".PerfilUsuarioActivity"
+            android:name=".DetalhesRestauranteActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
