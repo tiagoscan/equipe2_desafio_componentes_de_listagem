@@ -1,5 +1,6 @@
 package com.mentoriaandroid.myapplication
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
@@ -31,6 +32,15 @@ class DetalhesProdutoActivity : AppCompatActivity() {
         itemOpcionalAdapter.atualizarLista(lista)
         binding.recyclerViewOpcionais.adapter = itemOpcionalAdapter
         binding.recyclerViewOpcionais.layoutManager = LinearLayoutManager(this)
+
+        binding.fabVoltar.setOnClickListener {
+            finish()
+        }
+
+        binding.btnConfirmar.setOnClickListener {
+            val intent = Intent(this, ConfirmacaoPedidoActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 }
