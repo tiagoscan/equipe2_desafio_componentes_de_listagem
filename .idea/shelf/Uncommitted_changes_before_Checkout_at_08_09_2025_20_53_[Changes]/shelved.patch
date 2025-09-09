@@ -1,0 +1,198 @@
+Index: app/src/main/res/layout/activity_confirmacao_pedido.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.constraintlayout.widget.ConstraintLayout xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:app=\"http://schemas.android.com/apk/res-auto\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:id=\"@+id/main\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".ConfirmacaoPedidoActivity\">\r\n\r\n</androidx.constraintlayout.widget.ConstraintLayout>
+===================================================================
+diff --git a/app/src/main/res/layout/activity_confirmacao_pedido.xml b/app/src/main/res/layout/activity_confirmacao_pedido.xml
+--- a/app/src/main/res/layout/activity_confirmacao_pedido.xml	(revision 78a570bff3e33a9f5cdb38f20ac961b0f52b19f0)
++++ b/app/src/main/res/layout/activity_confirmacao_pedido.xml	(date 1757375614996)
+@@ -7,4 +7,188 @@
+     android:layout_height="match_parent"
+     tools:context=".ConfirmacaoPedidoActivity">
+ 
++    <TextView
++        android:id="@+id/textView8"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="16dp"
++        android:text="Confirmação do pedido"
++        android:textSize="18sp"
++        android:textStyle="bold"
++        app:layout_constraintBottom_toBottomOf="@+id/fabVoltarPedido"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent" />
++
++    <com.google.android.material.floatingactionbutton.FloatingActionButton
++        android:id="@+id/fabVoltarPedido"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="16dp"
++        android:layout_marginTop="16dp"
++        android:clickable="true"
++        app:backgroundTint="@color/white"
++        app:fabSize="auto"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toTopOf="parent"
++        app:srcCompat="@drawable/ic_voltar_24" />
++
++    <androidx.recyclerview.widget.RecyclerView
++        android:id="@+id/recyclerViewItens"
++        android:layout_width="0dp"
++        android:layout_height="250dp"
++        android:layout_marginTop="8dp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintHorizontal_bias="0.0"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView9" />
++
++    <TextView
++        android:id="@+id/textView9"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="16dp"
++        android:layout_marginTop="16dp"
++        android:text="Itens adicionados"
++        android:textSize="18sp"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/fabVoltarPedido" />
++
++    <TextView
++        android:id="@+id/textView10"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="16dp"
++        android:layout_marginTop="8dp"
++        android:text="Pagamento"
++        android:textSize="18sp"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/recyclerViewItens" />
++
++    <ImageView
++        android:id="@+id/imageView4"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="16dp"
++        android:layout_marginTop="24dp"
++        app:layout_constraintStart_toStartOf="@+id/textView10"
++        app:layout_constraintTop_toBottomOf="@+id/textView10"
++        app:srcCompat="@drawable/creditcard_payment_4578" />
++
++    <TextView
++        android:id="@+id/textView12"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="8dp"
++        android:text="Cartão de credito"
++        android:textSize="16sp"
++        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
++        app:layout_constraintStart_toEndOf="@+id/imageView4"
++        app:layout_constraintTop_toTopOf="@+id/imageView4"
++        app:layout_constraintVertical_bias="0.0" />
++
++    <Button
++        android:id="@+id/button2"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginEnd="16dp"
++        android:backgroundTint="@android:color/holo_red_dark"
++        android:text="Adicionar"
++        app:layout_constraintBottom_toBottomOf="@+id/textView12"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintTop_toTopOf="@+id/textView12" />
++
++    <TextView
++        android:id="@+id/textView13"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="16dp"
++        android:layout_marginTop="32dp"
++        android:text="Resumo dos valores"
++        android:textSize="18sp"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
++
++    <TextView
++        android:id="@+id/textView14"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="8dp"
++        android:text="Subtotal"
++        android:textSize="16sp"
++        app:layout_constraintStart_toStartOf="@+id/textView13"
++        app:layout_constraintTop_toBottomOf="@+id/textView13" />
++
++    <TextView
++        android:id="@+id/textView15"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="8dp"
++        android:layout_marginEnd="16dp"
++        android:text="R$ 100,00"
++        android:textSize="16sp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView13" />
++
++    <TextView
++        android:id="@+id/textView16"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="8dp"
++        android:text="Taxa de entrega"
++        android:textSize="16sp"
++        app:layout_constraintStart_toStartOf="@+id/textView14"
++        app:layout_constraintTop_toBottomOf="@+id/textView14" />
++
++    <TextView
++        android:id="@+id/textView17"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="8dp"
++        android:layout_marginEnd="16dp"
++        android:text="R$ 6,90"
++        android:textSize="16sp"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView15" />
++
++    <TextView
++        android:id="@+id/textView18"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="8dp"
++        android:text="Total"
++        android:textSize="16sp"
++        android:textStyle="bold"
++        app:layout_constraintStart_toStartOf="@+id/textView16"
++        app:layout_constraintTop_toBottomOf="@+id/textView16" />
++
++    <TextView
++        android:id="@+id/textView19"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_marginTop="8dp"
++        android:layout_marginEnd="16dp"
++        android:text="R$ 106,90"
++        android:textSize="16sp"
++        android:textStyle="bold"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView17" />
++
++    <Button
++        android:id="@+id/btnConfirmarPedido"
++        android:layout_width="0dp"
++        android:layout_height="wrap_content"
++        android:layout_marginStart="16dp"
++        android:layout_marginTop="16dp"
++        android:layout_marginEnd="16dp"
++        android:layout_marginBottom="16dp"
++        android:backgroundTint="@android:color/holo_red_dark"
++        android:text="Confirmar Pedido"
++        app:layout_constraintBottom_toBottomOf="parent"
++        app:layout_constraintEnd_toEndOf="parent"
++        app:layout_constraintStart_toStartOf="parent"
++        app:layout_constraintTop_toBottomOf="@+id/textView18" />
+ </androidx.constraintlayout.widget.ConstraintLayout>
+\ No newline at end of file

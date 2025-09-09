@@ -1,0 +1,114 @@
+Index: app/src/main/java/com/mentoriaandroid/myapplication/ConfirmacaoPedidoActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/mentoriaandroid/myapplication/ConfirmacaoPedidoActivity.kt b/app/src/main/java/com/mentoriaandroid/myapplication/ConfirmacaoPedidoActivity.kt
+new file mode 100644
+--- /dev/null	(date 1757375650303)
++++ b/app/src/main/java/com/mentoriaandroid/myapplication/ConfirmacaoPedidoActivity.kt	(date 1757375650303)
+@@ -0,0 +1,20 @@
++package com.mentoriaandroid.myapplication
++
++import android.os.Bundle
++import androidx.activity.enableEdgeToEdge
++import androidx.appcompat.app.AppCompatActivity
++import androidx.core.view.ViewCompat
++import androidx.core.view.WindowInsetsCompat
++
++class ConfirmacaoPedidoActivity : AppCompatActivity() {
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        enableEdgeToEdge()
++        setContentView(R.layout.activity_confirmacao_pedido)
++        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
++            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
++            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
++            insets
++        }
++    }
++}
+\ No newline at end of file
+Index: app/src/main/java/com/mentoriaandroid/myapplication/DetalhesProdutoActivity.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/app/src/main/java/com/mentoriaandroid/myapplication/DetalhesProdutoActivity.kt b/app/src/main/java/com/mentoriaandroid/myapplication/DetalhesProdutoActivity.kt
+new file mode 100644
+--- /dev/null	(date 1757375650294)
++++ b/app/src/main/java/com/mentoriaandroid/myapplication/DetalhesProdutoActivity.kt	(date 1757375650294)
+@@ -0,0 +1,46 @@
++package com.mentoriaandroid.myapplication
++
++import android.content.Intent
++import android.os.Bundle
++import androidx.activity.enableEdgeToEdge
++import androidx.appcompat.app.AppCompatActivity
++import androidx.core.view.ViewCompat
++import androidx.core.view.WindowInsetsCompat
++import androidx.recyclerview.widget.LinearLayoutManager
++import androidx.recyclerview.widget.RecyclerView
++import com.mentoriaandroid.myapplication.databinding.ActivityDetalhesProdutoBinding
++
++class DetalhesProdutoActivity : AppCompatActivity() {
++
++    private lateinit var itemOpcionalAdapter: ItemOpcionalAdapter
++
++    private val binding by lazy {
++        ActivityDetalhesProdutoBinding.inflate(layoutInflater)
++    }
++
++    override fun onCreate(savedInstanceState: Bundle?) {
++        super.onCreate(savedInstanceState)
++        setContentView(binding.root)
++
++        val lista = listOf(
++            ItemOpcional("Bacon", "Bacon fatiado","R$ 10,00", R.drawable.img_bacon ),
++            ItemOpcional("Katchup", "Molho de katchup","R$ 8,00", R.drawable.img_sauce ),
++            ItemOpcional("Cheddar", "Queijo cheddar fatiado extra","R$ 10,00", R.drawable.img_chedar )
++        )
++
++        itemOpcionalAdapter = ItemOpcionalAdapter()
++        itemOpcionalAdapter.atualizarLista(lista)
++        binding.recyclerViewOpcionais.adapter = itemOpcionalAdapter
++        binding.recyclerViewOpcionais.layoutManager = LinearLayoutManager(this)
++
++        binding.fabVoltar.setOnClickListener {
++            finish()
++        }
++
++        binding.btnConfirmar.setOnClickListener {
++            val intent = Intent(this, ConfirmacaoPedidoActivity::class.java)
++            startActivity(intent)
++        }
++
++    }
++}
+\ No newline at end of file
+Index: .idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleJvm\" value=\"#GRADLE_LOCAL_JAVA_HOME\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n            <option value=\"$PROJECT_DIR$/app\" />\r\n          </set>\r\n        </option>\r\n        <option name=\"resolveExternalAnnotations\" value=\"false\" />\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/gradle.xml b/.idea/gradle.xml
+--- a/.idea/gradle.xml	(revision 875acf48f82c5a9ca2715869b4593152ac3eba08)
++++ b/.idea/gradle.xml	(date 1757375672006)
+@@ -3,6 +3,7 @@
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>
++        <option name="testRunner" value="CHOOSE_PER_TEST" />
+         <option name="externalProjectPath" value="$PROJECT_DIR$" />
+         <option name="gradleJvm" value="#GRADLE_LOCAL_JAVA_HOME" />
+         <option name="modules">
+@@ -11,7 +12,6 @@
+             <option value="$PROJECT_DIR$/app" />
+           </set>
+         </option>
+-        <option name="resolveExternalAnnotations" value="false" />
+       </GradleProjectSettings>
+     </option>
+   </component>
