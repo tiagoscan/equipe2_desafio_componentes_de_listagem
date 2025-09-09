@@ -28,8 +28,7 @@ class DetalhesRestauranteActivity : AppCompatActivity() {
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerViewProdutos)
 
         imagemVoltar.setOnClickListener {
-            //val intent = Intent(this, InicialRestaurantesActivity::class.java)
-            val intent = Intent (this, MainActivity::class.java)
+            val intent = Intent (this, InicialRestaurantesActivity::class.java)
             startActivity(intent)
         }
 
