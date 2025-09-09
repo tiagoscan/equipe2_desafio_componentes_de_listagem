@@ -19,7 +19,7 @@
             android:name=".ConfirmacaoPedidoActivity"
             android:exported="false" />
       <activity
-            android:name=".DetalhesProdutosActivity"
+            android:name=".DetalhesProdutoActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
