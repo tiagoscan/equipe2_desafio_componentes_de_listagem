@@ -40,8 +40,7 @@ class ProdutosAdapter(private val lista: List<Produtos>) : RecyclerView.Adapter<
 
             // Abre a nova tela
             val context = holder.itemView.context
-            //val intent = Intent(context, DetalhesProdutosActivity::class.java)
-            val intent = Intent(context, MainActivity::class.java).apply {
+            val intent = Intent(context, DetalhesProdutoActivity::class.java).apply {
                 putExtra("nome", item.nome)
                 putExtra("descricao", item.descricao)
                 putExtra("preco", item.preco)
